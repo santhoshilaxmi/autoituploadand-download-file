@@ -1,0 +1,33 @@
+#####################
+#cs ----------------------------------------------------------------------------
+
+ AutoIt Version: 3.3.14.5
+ Author:         myName
+
+ Script Function:
+	Template AutoIt script.
+
+#ce ----------------------------------------------------------------------------
+
+; Script Start - Add your code below here
+; wait for 8 seconds to appear download and save dialog. Used class property of download dialog.
+WinWait("[CLASS:#MozillaDialogClass]","",8)
+
+; Perform keyboard ALT key down + s + ALT key Up action to select Save File Radio button using keyboard sortcut.
+Send("{ALTDOWN}s{ALTUP}")
+
+; Wait for 3 seconds
+Sleep(3000)
+
+; Press Keyboard ENTER button.
+Send("{ENTER}")
+Sleep(3000)
+
+#################################
+WinWait("[CLASS:#32770]","",10)
+ControlFocus("Open","","Edit1")
+Sleep(2000)
+ControlSetText("Open","","Edit1","C:\Users\DELL\Desktop\New folder\RESUME.docx")
+Sleep(2000)
+ControlClick("Open","","Button1")
+Sleep(2000)
